@@ -12,6 +12,5 @@ export const createTransaction = async (transactionBody) => {
       name: true,
     },
   });
-
   return transaction;
 };

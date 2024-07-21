@@ -7,7 +7,7 @@ export const createTransactionRepository = async (transactionBody) => {
   return transaction;
 };
 
-export const getAllTransactionsRespository = async (userId) => {
+export const getTransactionByUserId = async (userId) => {
   const transactions = await prisma.transaction.findMany({
     where: {
       user_id: userId,

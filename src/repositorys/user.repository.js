@@ -21,7 +21,6 @@ export const getAll = async () => {
       lastName: true,
       email: true,
       password: false,
-      transactions: true,
       _count: false,
     },
   });

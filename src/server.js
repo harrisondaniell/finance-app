@@ -1,7 +1,7 @@
 import express, { urlencoded } from "express";
 import "dotenv/config";
 import cors from "cors";
-//
+
 const server = express();
 server.use(cors());
 server.use(urlencoded({ extended: true }));

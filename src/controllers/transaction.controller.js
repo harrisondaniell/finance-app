@@ -4,7 +4,7 @@ export const createTransactionController = async (req, res) => {
   try {
     const transaction = await createTransaction(req.body);
     console.log(transaction);
-    res.status(201).json(user);
+    res.status(201).json(transaction);
   } catch (error) {
     res.status(400).send(error);
   }

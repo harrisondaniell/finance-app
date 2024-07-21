@@ -6,7 +6,7 @@
   "scripts": {
     "docker": "docker-compose up -d",
     "prisma-init": "prisma migrate dev --name init",
-    "dev": "node --watch ./src/index.js"
+    "dev": "node --watch ./src/server.js"
   },
   "keywords": [],
   "author": "",

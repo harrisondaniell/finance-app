@@ -1,6 +1,6 @@
 import {
   createTransactionRepository,
-  getTransactionByUserId,
+  getTransactionByUserIdRepository,
 } from "../repositorys/transaction.repository.js";
 
 export const createTransactionController = async (req, res) => {
@@ -15,7 +15,8 @@ export const createTransactionController = async (req, res) => {
 export const getTransactionByUserIdController = async (req, res) => {
   try {
     const userId = req.query.userId;
-    const transactions = await getTransactionByUserId(userId);
+    const transactions = await getTransactionByUserIdRepository(userId);
+    console.log(transactions);
     res.status(200).json(transactions);
   } catch (error) {
     res.status(400).send(error);

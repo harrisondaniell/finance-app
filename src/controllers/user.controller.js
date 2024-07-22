@@ -45,3 +45,12 @@ export const updateUserController = async (req, res) => {
     res.status(400).send(error);
   }
 };
+
+export const deleteUserController = async (req, res) => {
+  try {
+    const user = await deleteUserController(req.params.id);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+};

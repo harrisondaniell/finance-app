@@ -1,5 +1,10 @@
 import bcrypt from "bcrypt";
-import { createUser, getAll, getByID } from "../repositorys/user.repository.js";
+import {
+  createUser,
+  getAll,
+  getByID,
+  updateUserRepository,
+} from "../repositorys/user.repository.js";
 
 export const create = async (req, res) => {
   try {
@@ -26,6 +31,15 @@ export const get = async (req, res) => {
 export const getId = async (req, res) => {
   try {
     const user = await getByID(req.params.id);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+};
+
+export const updateUserController = async (req, res) => {
+  try {
+    const user = await updateUserRepository(req.params.id, req.body);
     res.status(200).json(user);
   } catch (error) {
     res.status(400).send(error);

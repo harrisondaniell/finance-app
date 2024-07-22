@@ -13,6 +13,5 @@ export const getTransactionByUserIdRepository = async (userId) => {
       user_id: userId,
     },
   });
-  console.log(transactions);
   return transactions;
 };

@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import {
   createUser,
+  deleteUserRepository,
   getAll,
   getByID,
   updateUserRepository,
@@ -48,7 +49,8 @@ export const updateUserController = async (req, res) => {
 
 export const deleteUserController = async (req, res) => {
   try {
-    const user = await deleteUserController(req.params.id);
+    const user = await deleteUserRepository(req.params.id);
+    console.log(user);
     res.status(200).json(user);
   } catch (error) {
     res.status(400).send(error);

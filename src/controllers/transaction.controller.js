@@ -1,5 +1,6 @@
 import {
   createTransactionRepository,
+  deleteTransactionRespository,
   getTransactionByUserIdRepository,
   updateTransactionRepository,
 } from "../repositorys/transaction.repository.js";
@@ -26,10 +27,21 @@ export const getTransactionByUserIdController = async (req, res) => {
 
 export const updateTransactionController = async (req, res) => {
   try {
+    const transactionId = req.params.id;
     const transaction = await updateTransactionRepository(
-      req.params.id,
+      transactionId,
       req.body
     );
+    res.status(200).json(transaction);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+};
+
+export const deleteTransactionController = async (req, res) => {
+  try {
+    const transactionId = req.params.id;
+    const transaction = await deleteTransactionRespository(transactionId);
     res.status(200).json(transaction);
   } catch (error) {
     res.status(400).send(error);

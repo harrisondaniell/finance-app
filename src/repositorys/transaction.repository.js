@@ -25,3 +25,13 @@ export const updateTransactionRepository = async (transactionId, data) => {
   });
   return transaction;
 };
+
+export const deleteTransactionRespository = async (transactionId) => {
+  const transaction = await prisma.transaction.delete({
+    where: {
+      id: transactionId,
+    },
+  });
+
+  return transaction;
+};

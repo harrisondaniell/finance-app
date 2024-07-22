@@ -27,7 +27,7 @@ export const getAll = async () => {
   return users;
 };
 
-export const getByID = async (id) => {
+export const getByIDRepository = async (id) => {
   const user = await prisma.user.findUnique({
     where: {
       id,

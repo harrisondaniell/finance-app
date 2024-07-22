@@ -3,7 +3,7 @@ import {
   createUser,
   deleteUserRepository,
   getAll,
-  getByID,
+  getByIDRepository,
   updateUserRepository,
 } from "../repositorys/user.repository.js";
 
@@ -31,7 +31,7 @@ export const getAllController = async (req, res) => {
 
 export const getIdController = async (req, res) => {
   try {
-    const user = await getByID(req.params.id);
+    const user = await getByIDRepository(req.params.id);
     res.status(200).json(user);
   } catch (error) {
     res.status(400).send(error);

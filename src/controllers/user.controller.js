@@ -7,7 +7,7 @@ import {
   updateUserRepository,
 } from "../repositorys/user.repository.js";
 
-export const create = async (req, res) => {
+export const createUserController = async (req, res) => {
   try {
     const hashPassword = await bcrypt.hash(req.body.password, 10);
     req.body.password = hashPassword;
@@ -20,7 +20,7 @@ export const create = async (req, res) => {
   }
 };
 
-export const get = async (req, res) => {
+export const getAllController = async (req, res) => {
   try {
     const users = await getAll();
     res.status(200).send(users);
@@ -29,7 +29,7 @@ export const get = async (req, res) => {
   }
 };
 
-export const getId = async (req, res) => {
+export const getIdController = async (req, res) => {
   try {
     const user = await getByID(req.params.id);
     res.status(200).json(user);

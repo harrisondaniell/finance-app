@@ -15,3 +15,12 @@ export const getTransactionByUserIdRepository = async (userId) => {
   });
   return transactions;
 };
+
+export const updateTransactionRepository = async (transactionId, data) => {
+  const transaction = await prisma.transaction.update({
+    where: {
+      id: transactionId,
+    },
+    data,
+  });
+};

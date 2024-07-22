@@ -1,7 +1,7 @@
 node_modules
 banco-de-dados-eventos/
+./banco-de-dados-eventos/
 
-prisma/migrations/
 
 *.log
-*.lock
+

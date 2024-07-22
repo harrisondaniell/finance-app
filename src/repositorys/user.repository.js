@@ -44,7 +44,6 @@ export const getByID = async (id) => {
 };
 
 export const updateUserRepository = async (id, data) => {
-  console.log(id);
   const user = await prisma.user.update({
     where: {
       id,
@@ -58,5 +57,14 @@ export const updateUserRepository = async (id, data) => {
     },
   });
   console.log(user);
+  return user;
+};
+
+export const deleteUserRepository = async (id) => {
+  const user = await prisma.user.delete({
+    where: {
+      id,
+    },
+  });
   return user;
 };

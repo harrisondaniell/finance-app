@@ -23,4 +23,5 @@ export const updateTransactionRepository = async (transactionId, data) => {
     },
     data,
   });
+  return transaction;
 };

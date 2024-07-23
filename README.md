@@ -4,7 +4,7 @@
 
 ## Requisitos
 
-- [Node.js](https://nodejs.org/) versão 18 ou superior
+- [Node.js](https://nodejs.org/) versão 18 ou 20
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 

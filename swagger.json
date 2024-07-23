@@ -258,7 +258,7 @@
         }
       }
     },
-    "/transactions/{userId}": {
+    "/transactions?userId={userId}": {
       "get": {
         "tags": ["Transaction"],
         "summary": "Retorna todas as transações de um usuário através do id",

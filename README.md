@@ -40,7 +40,7 @@
 
 - **Rota para a documentação da API**:
   - `GET/docs`
-    ![alt text](image.png)
+    ![alt text](image-1.png)
 
 <!-- ## Endpoints da API
 

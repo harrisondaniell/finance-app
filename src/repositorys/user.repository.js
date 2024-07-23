@@ -1,6 +1,6 @@
 import { prisma } from "../services/prisma.js";
 
-export const createUser = async (data) => {
+export const createUserRepository = async (data) => {
   const user = await prisma.user.create({
     data,
     select: {
@@ -13,7 +13,7 @@ export const createUser = async (data) => {
   return user;
 };
 
-export const getAll = async () => {
+export const getAllRepository = async () => {
   const users = await prisma.user.findMany({
     select: {
       id: true,

@@ -36,7 +36,13 @@
    npm run dev
    ```
 
-## Endpoints da API
+### Swagger
+
+- **Rota para a documentação da API**:
+  - `GET/docs`
+    ![alt text](image.png)
+
+<!-- ## Endpoints da API
 
 ### Usuários
 
@@ -113,7 +119,7 @@
 - **DELETE /transactions/:id**
   - **Resumo**: Deleta uma transação pelo ID.
   - **Parâmetros**:
-    - `id` (path): ID da transação.
+    - `id` (path): ID da transação. -->
 
 ## Schemas
 

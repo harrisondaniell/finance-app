@@ -4,6 +4,7 @@ import {
   deleteUserRepository,
   getAllRepository,
   getByIDRepository,
+  getUserBalanceRepository,
   updateUserRepository,
 } from "../repositorys/user.repository.js";
 
@@ -54,5 +55,15 @@ export const deleteUserController = async (req, res) => {
     res.status(200).json(user);
   } catch (error) {
     res.status(400).send(error);
+  }
+};
+
+export const getUserBalanceController = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const balance = await getUserBalanceRepository(userId);
+    res.status(200).json(balance);
+  } catch (error) {
+    res.status(400).json(error);
   }
 };

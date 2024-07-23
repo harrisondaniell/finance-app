@@ -9,10 +9,7 @@ import {
 const transactionRouter = Router();
 
 transactionRouter.post("/transactions", createTransactionController);
-transactionRouter.get(
-  "/transactions/:userId",
-  getTransactionByUserIdController
-);
+transactionRouter.get("/transactions", getTransactionByUserIdController);
 transactionRouter.patch("/transactions/:id", updateTransactionController);
 transactionRouter.delete("/transactions/:id", deleteTransactionController);
 

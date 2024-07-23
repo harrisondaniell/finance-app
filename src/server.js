@@ -17,7 +17,6 @@ server.use(userRouter);
 server.use(transactionRouter);
 server.use(swaggerRouter);
 
-const port = 3000;
-server.listen(port, () => {
+server.listen(process.env.PORT, () => {
   console.log("Servidor no ar");
 });

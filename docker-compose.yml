@@ -4,7 +4,7 @@ services:
   db-postgres:
     image: postgres:alpine
     ports:
-      - "5433:5432"
+      - ${PGPORT}
     container_name: "db-postgres"
     restart: always
     volumes:

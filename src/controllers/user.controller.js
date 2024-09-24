@@ -13,9 +13,7 @@ export const createUserController = async (req, res) => {
   try {
     const hashPassword = await bcrypt.hash(req.body.password, 10);
     req.body.password = hashPassword;
-    console.log(hashPassword);
     const user = await createUserRepository(req.body);
-    console.log(user);
     res.status(201).json(user);
   } catch (error) {
     res.status(400).send(error);

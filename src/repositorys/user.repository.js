@@ -118,3 +118,15 @@ export const getUserBalanceRepository = async (userId) => {
     balance,
   };
 };
+
+export const getUserIdByEmailRepository = async (email) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      email,
+    },
+    select: {
+      id: true,
+    },
+  });
+  return user;
+};

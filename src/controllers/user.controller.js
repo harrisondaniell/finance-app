@@ -5,6 +5,7 @@ import {
   getAllRepository,
   getByIDRepository,
   getUserBalanceRepository,
+  getUserIdByEmailRepository,
   updateUserRepository,
 } from "../repositorys/user.repository.js";
 
@@ -63,6 +64,16 @@ export const getUserBalanceController = async (req, res) => {
     const userId = req.params.userId;
     const balance = await getUserBalanceRepository(userId);
     res.status(200).json(balance);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
+
+export const getUserIdByEmailController = async (req, res) => {
+  try {
+    const email = req.params.email;
+    const id = await getUserIdByEmailRepository(email);
+    res.status(200).json(id);
   } catch (error) {
     res.status(400).json(error);
   }

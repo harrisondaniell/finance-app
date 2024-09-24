@@ -71,7 +71,7 @@ export const getUserBalanceController = async (req, res) => {
 
 export const getUserIdByEmailController = async (req, res) => {
   try {
-    const email = req.params.email;
+    const email = req.body.email;
     const id = await getUserIdByEmailRepository(email);
     res.status(200).json(id);
   } catch (error) {
